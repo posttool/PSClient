@@ -74,21 +74,21 @@ package com.pagesociety.ux.style{
 
 
                     switch (alt1) {
-                	case 1 :
-                	    // C:\\eclipse_workspace\\PSWebGen\\ux\\PSStyleSheet.g:15:5: style
-                	    {
-                	    pushFollow(FOLLOW_style_in_prog64);
-                	    style1=style();
+                    case 1 :
+                        // C:\\eclipse_workspace\\PSWebGen\\ux\\PSStyleSheet.g:15:5: style
+                        {
+                        pushFollow(FOLLOW_style_in_prog64);
+                        style1=style();
 
-                	    state._fsp--;
+                        state._fsp--;
 
-                	    stream_style.add(style1.tree);
+                        stream_style.add(style1.tree);
 
-                	    }
-                	    break;
+                        }
+                        break;
 
-                	default :
-                	    break loop1;
+                    default :
+                        break loop1;
                     }
                 } while (true);
 
@@ -357,21 +357,21 @@ package com.pagesociety.ux.style{
 
 
                     switch (alt3) {
-                	case 1 :
-                	    // C:\\eclipse_workspace\\PSWebGen\\ux\\PSStyleSheet.g:28:5: property
-                	    {
-                	    pushFollow(FOLLOW_property_in_body152);
-                	    property10=property();
+                    case 1 :
+                        // C:\\eclipse_workspace\\PSWebGen\\ux\\PSStyleSheet.g:28:5: property
+                        {
+                        pushFollow(FOLLOW_property_in_body152);
+                        property10=property();
 
-                	    state._fsp--;
+                        state._fsp--;
 
-                	    stream_property.add(property10.tree);
+                        stream_property.add(property10.tree);
 
-                	    }
-                	    break;
+                        }
+                        break;
 
-                	default :
-                	    break loop3;
+                    default :
+                        break loop3;
                     }
                 } while (true);
 
@@ -471,18 +471,18 @@ package com.pagesociety.ux.style{
 
 
                     switch (alt4) {
-                	case 1 :
-                	    // C:\\eclipse_workspace\\PSWebGen\\ux\\PSStyleSheet.g:32:20: IDENTIFIER
-                	    {
-                	    IDENTIFIER13=Token(matchStream(input,IDENTIFIER,FOLLOW_IDENTIFIER_in_property182));  
-                	    stream_IDENTIFIER.add(IDENTIFIER13);
+                    case 1 :
+                        // C:\\eclipse_workspace\\PSWebGen\\ux\\PSStyleSheet.g:32:20: IDENTIFIER
+                        {
+                        IDENTIFIER13=Token(matchStream(input,IDENTIFIER,FOLLOW_IDENTIFIER_in_property182));  
+                        stream_IDENTIFIER.add(IDENTIFIER13);
 
 
-                	    }
-                	    break;
+                        }
+                        break;
 
-                	default :
-                	    if ( cnt4 >= 1 ) break loop4;
+                    default :
+                        if ( cnt4 >= 1 ) break loop4;
                             throw new EarlyExitException(4, input);
 
                     }

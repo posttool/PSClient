@@ -136,23 +136,23 @@ package com.pagesociety.ux.style{
 
 
                     switch (alt1) {
-                	case 1 :
-                	    // C:\\eclipse_workspace\\PSWebGen\\ux\\PSStyleSheet.g:
-                	    {
-                	    if ( input.LA(1)==35||input.LA(1)==46||(input.LA(1)>=48 && input.LA(1)<=57)||(input.LA(1)>=65 && input.LA(1)<=90)||input.LA(1)==95||(input.LA(1)>=97 && input.LA(1)<=122) ) {
-                	        input.consume();
+                    case 1 :
+                        // C:\\eclipse_workspace\\PSWebGen\\ux\\PSStyleSheet.g:
+                        {
+                        if ( input.LA(1)==35||input.LA(1)==46||(input.LA(1)>=48 && input.LA(1)<=57)||(input.LA(1)>=65 && input.LA(1)<=90)||input.LA(1)==95||(input.LA(1)>=97 && input.LA(1)<=122) ) {
+                            input.consume();
 
-                	    }
-                	    else {
-                	        throw recover(new MismatchedSetException(null,input));
-                	    }
+                        }
+                        else {
+                            throw recover(new MismatchedSetException(null,input));
+                        }
 
 
-                	    }
-                	    break;
+                        }
+                        break;
 
-                	default :
-                	    if ( cnt1 >= 1 ) break loop1;
+                    default :
+                        if ( cnt1 >= 1 ) break loop1;
                             throw new EarlyExitException(1, input);
 
                     }
@@ -204,16 +204,16 @@ package com.pagesociety.ux.style{
 
 
                     switch (alt2) {
-                	case 1 :
-                	    // C:\\eclipse_workspace\\PSWebGen\\ux\\PSStyleSheet.g:39:40: .
-                	    {
-                	    matchAny(); 
+                    case 1 :
+                        // C:\\eclipse_workspace\\PSWebGen\\ux\\PSStyleSheet.g:39:40: .
+                        {
+                        matchAny(); 
 
-                	    }
-                	    break;
+                        }
+                        break;
 
-                	default :
-                	    break loop2;
+                    default :
+                        break loop2;
                     }
                 } while (true);
 
@@ -253,23 +253,23 @@ package com.pagesociety.ux.style{
 
 
                     switch (alt3) {
-                	case 1 :
-                	    // C:\\eclipse_workspace\\PSWebGen\\ux\\PSStyleSheet.g:42:10: ~ ( '\\n' | '\\r' )
-                	    {
-                	    if ( (input.LA(1)>=0 && input.LA(1)<=9)||(input.LA(1)>=11 && input.LA(1)<=12)||(input.LA(1)>=14 && input.LA(1)<=65534) ) {
-                	        input.consume();
+                    case 1 :
+                        // C:\\eclipse_workspace\\PSWebGen\\ux\\PSStyleSheet.g:42:10: ~ ( '\\n' | '\\r' )
+                        {
+                        if ( (input.LA(1)>=0 && input.LA(1)<=9)||(input.LA(1)>=11 && input.LA(1)<=12)||(input.LA(1)>=14 && input.LA(1)<=65534) ) {
+                            input.consume();
 
-                	    }
-                	    else {
-                	        throw recover(new MismatchedSetException(null,input));
-                	    }
+                        }
+                        else {
+                            throw recover(new MismatchedSetException(null,input));
+                        }
 
 
-                	    }
-                	    break;
+                        }
+                        break;
 
-                	default :
-                	    break loop3;
+                    default :
+                        break loop3;
                     }
                 } while (true);
 
@@ -325,23 +325,23 @@ package com.pagesociety.ux.style{
 
 
                     switch (alt5) {
-                	case 1 :
-                	    // C:\\eclipse_workspace\\PSWebGen\\ux\\PSStyleSheet.g:
-                	    {
-                	    if ( (input.LA(1)>=9 && input.LA(1)<=10)||input.LA(1)==13||input.LA(1)==32 ) {
-                	        input.consume();
+                    case 1 :
+                        // C:\\eclipse_workspace\\PSWebGen\\ux\\PSStyleSheet.g:
+                        {
+                        if ( (input.LA(1)>=9 && input.LA(1)<=10)||input.LA(1)==13||input.LA(1)==32 ) {
+                            input.consume();
 
-                	    }
-                	    else {
-                	        throw recover(new MismatchedSetException(null,input));
-                	    }
+                        }
+                        else {
+                            throw recover(new MismatchedSetException(null,input));
+                        }
 
 
-                	    }
-                	    break;
+                        }
+                        break;
 
-                	default :
-                	    if ( cnt5 >= 1 ) break loop5;
+                    default :
+                        if ( cnt5 >= 1 ) break loop5;
                             throw new EarlyExitException(5, input);
 
                     }

@@ -269,21 +269,21 @@ package com.pagesociety.ux.declarative {
 
 
                     switch (alt2) {
-                	case 1 :
-                	    // C:\\eclipse_workspace\\PSWebGen\\ux\\PSUX.g:22:5: property
-                	    {
-                	    pushFollow(FOLLOW_property_in_body117);
-                	    property7=property();
+                    case 1 :
+                        // C:\\eclipse_workspace\\PSWebGen\\ux\\PSUX.g:22:5: property
+                        {
+                        pushFollow(FOLLOW_property_in_body117);
+                        property7=property();
 
-                	    state._fsp--;
+                        state._fsp--;
 
-                	    stream_property.add(property7.tree);
+                        stream_property.add(property7.tree);
 
-                	    }
-                	    break;
+                        }
+                        break;
 
-                	default :
-                	    break loop2;
+                    default :
+                        break loop2;
                     }
                 } while (true);
 
@@ -299,21 +299,21 @@ package com.pagesociety.ux.declarative {
 
 
                     switch (alt3) {
-                	case 1 :
-                	    // C:\\eclipse_workspace\\PSWebGen\\ux\\PSUX.g:22:15: block
-                	    {
-                	    pushFollow(FOLLOW_block_in_body120);
-                	    block8=block();
+                    case 1 :
+                        // C:\\eclipse_workspace\\PSWebGen\\ux\\PSUX.g:22:15: block
+                        {
+                        pushFollow(FOLLOW_block_in_body120);
+                        block8=block();
 
-                	    state._fsp--;
+                        state._fsp--;
 
-                	    stream_block.add(block8.tree);
+                        stream_block.add(block8.tree);
 
-                	    }
-                	    break;
+                        }
+                        break;
 
-                	default :
-                	    break loop3;
+                    default :
+                        break loop3;
                     }
                 } while (true);
 

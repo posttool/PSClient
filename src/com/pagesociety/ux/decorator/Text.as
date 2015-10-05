@@ -1,155 +1,155 @@
 package com.pagesociety.ux.decorator
 {
-	import flash.filters.ColorMatrixFilter;
-	import flash.text.AntiAliasType;
-	import flash.text.GridFitType;
-	import flash.text.TextField;
-	import flash.text.TextFormat;
+    import flash.filters.ColorMatrixFilter;
+    import flash.text.AntiAliasType;
+    import flash.text.GridFitType;
+    import flash.text.TextField;
+    import flash.text.TextFormat;
 
-	public class Text extends TextField
-	{
-		public static var SYSTEM_FONTS:Array = [
-			"_sans", "Arial", "Verdana", "Courier", "Courier New"
-		];
-		
-		public static function isSystemFont(f:String):Boolean
-		{
-			return SYSTEM_FONTS.indexOf(f)!=-1;
-		}
-		
-		public function Text()
-		{
-			super();
-			
-        	embedFonts = true;
-        	antiAliasType = AntiAliasType.ADVANCED;
-        	gridFitType = GridFitType.PIXEL;
-        	sharpness = 0;
-        	thickness = 0;
-        	selectable = false;
-        	width = 100;
-//        	condenseWhite = true;
+    public class Text extends TextField
+    {
+        public static var SYSTEM_FONTS:Array = [
+            "_sans", "Arial", "Verdana", "Courier", "Courier New"
+        ];
+        
+        public static function isSystemFont(f:String):Boolean
+        {
+            return SYSTEM_FONTS.indexOf(f)!=-1;
+        }
+        
+        public function Text()
+        {
+            super();
+            
+            embedFonts = true;
+            antiAliasType = AntiAliasType.ADVANCED;
+            gridFitType = GridFitType.PIXEL;
+            sharpness = 0;
+            thickness = 0;
+            selectable = false;
+            width = 100;
+//          condenseWhite = true;
        
- 		}
-		
-		public function get textFormat():TextFormat
-		{
-			return defaultTextFormat;
-		}
-		
-		public function set textFormat(format:TextFormat):void
-		{
-		
-			embedFonts = !isSystemFont(format.font);
-			try { defaultTextFormat = format; } catch (e:Error) {}
-			
-		
-		}
-		
-	
-		// coloring
-		private static const byteToPerc:Number = 1 / 0xff;
+        }
+        
+        public function get textFormat():TextFormat
+        {
+            return defaultTextFormat;
+        }
+        
+        public function set textFormat(format:TextFormat):void
+        {
+        
+            embedFonts = !isSystemFont(format.font);
+            try { defaultTextFormat = format; } catch (e:Error) {}
+            
+        
+        }
+        
+    
+        // coloring
+        private static const byteToPerc:Number = 1 / 0xff;
 
-		private var $textField:TextField;
-		private var $textColor:int=-1;
-		private var $selectedColor:int=-1;
-		private var $selectionColor:int=-1;
-		private var colorMatrixFilter:ColorMatrixFilter;
-	
-		public function set normalColor(c:int):void 
-		{  
-			$textColor = c;
-			updateFilter();
-		}
-		public function get normalColor():int 
-		{
-			return $textColor;
-		}
-		public function set selectionColor(c:int):void 
-		{
-			$selectionColor = c;
-			updateFilter();
-		}
-		public function get selectionColor():int 
-		{
-			return $selectionColor;
-		}
-		public function set selectedColor(c:int):void 
-		{
-			$selectedColor = c;
-			updateFilter();
-		}
-		public function get selectedColor():int 
-		{
-			return $selectedColor;
-		}
-		
-		private function updateFilter():void 
-		{
-			textFormat.color = $textColor;
-			defaultTextFormat = textFormat;
-		}
-		private function updateFilterA():void 
-		{
-			textColor = 0xff0000;
+        private var $textField:TextField;
+        private var $textColor:int=-1;
+        private var $selectedColor:int=-1;
+        private var $selectionColor:int=-1;
+        private var colorMatrixFilter:ColorMatrixFilter;
+    
+        public function set normalColor(c:int):void 
+        {  
+            $textColor = c;
+            updateFilter();
+        }
+        public function get normalColor():int 
+        {
+            return $textColor;
+        }
+        public function set selectionColor(c:int):void 
+        {
+            $selectionColor = c;
+            updateFilter();
+        }
+        public function get selectionColor():int 
+        {
+            return $selectionColor;
+        }
+        public function set selectedColor(c:int):void 
+        {
+            $selectedColor = c;
+            updateFilter();
+        }
+        public function get selectedColor():int 
+        {
+            return $selectedColor;
+        }
+        
+        private function updateFilter():void 
+        {
+            textFormat.color = $textColor;
+            defaultTextFormat = textFormat;
+        }
+        private function updateFilterA():void 
+        {
+            textColor = 0xff0000;
 
-			var o:Array = splitRGB($selectionColor);
-			var r:Array = splitRGB($textColor);
-			var g:Array = splitRGB($selectedColor);
-			
-			var ro:int = o[0];
-			var go:int = o[1];
-			var bo:int = o[2];
-			
-			var rr:Number = ((r[0] - 0xff) - o[0]) * byteToPerc + 1;
-			var rg:Number = ((r[1] - 0xff) - o[1]) * byteToPerc + 1;
-			var rb:Number = ((r[2] - 0xff) - o[2]) * byteToPerc + 1;
+            var o:Array = splitRGB($selectionColor);
+            var r:Array = splitRGB($textColor);
+            var g:Array = splitRGB($selectedColor);
+            
+            var ro:int = o[0];
+            var go:int = o[1];
+            var bo:int = o[2];
+            
+            var rr:Number = ((r[0] - 0xff) - o[0]) * byteToPerc + 1;
+            var rg:Number = ((r[1] - 0xff) - o[1]) * byteToPerc + 1;
+            var rb:Number = ((r[2] - 0xff) - o[2]) * byteToPerc + 1;
 
-			var gr:Number = ((g[0] - 0xff) - o[0]) * byteToPerc + 1 - rr;
-			var gg:Number = ((g[1] - 0xff) - o[1]) * byteToPerc + 1 - rg;
-			var gb:Number = ((g[2] - 0xff) - o[2]) * byteToPerc + 1 - rb;
-			
-			if (colorMatrixFilter == null)
-				colorMatrixFilter = new ColorMatrixFilter();
-			colorMatrixFilter.matrix = [rr, gr, 0, 0, ro, rg, gg, 0, 0, go, rb, gb, 0, 0, bo, 0, 0, 0, 1, 0];
-			
-			filters = [colorMatrixFilter];
-			
-		}
-		
-		private static function splitRGB(color:uint):Array 
-		{
-			
-			return [color >> 16 & 0xff, color >> 8 & 0xff, color & 0xff];
-		}
-		
-		
-		
-		
-		// TODO
-		// the embedFonts prop should be controlled on a field by field basic and depend on the style name. 
-		// a multi style text field must use all system fonts or all embedded or it will not work.
-//		override public function set styleSheet(ss:StyleSheet):void
-//		{
-//			var f:Array = new Array();
-//			ss.styleNames.forEach(function(s:*,i:uint,a:Array):void
-//			{
-//				var ff:String = ss.getStyle(s).fontFamily;
-//				if (ff!=null && f.indexOf(ff)==-1)
-//					f.push(ff);
-//			});
-//			var b:Boolean = false;
-//			f.forEach(function(s:*,i:uint,a:Array):void
-//			{
-//				trace(s+" "+isSystemFont(s));
-//				if (!isSystemFont(s))
-//					b = true;
-//			});
-//			embedFonts = b;
-//			super.styleSheet = ss;
-//		}
-		
-	}
+            var gr:Number = ((g[0] - 0xff) - o[0]) * byteToPerc + 1 - rr;
+            var gg:Number = ((g[1] - 0xff) - o[1]) * byteToPerc + 1 - rg;
+            var gb:Number = ((g[2] - 0xff) - o[2]) * byteToPerc + 1 - rb;
+            
+            if (colorMatrixFilter == null)
+                colorMatrixFilter = new ColorMatrixFilter();
+            colorMatrixFilter.matrix = [rr, gr, 0, 0, ro, rg, gg, 0, 0, go, rb, gb, 0, 0, bo, 0, 0, 0, 1, 0];
+            
+            filters = [colorMatrixFilter];
+            
+        }
+        
+        private static function splitRGB(color:uint):Array 
+        {
+            
+            return [color >> 16 & 0xff, color >> 8 & 0xff, color & 0xff];
+        }
+        
+        
+        
+        
+        // TODO
+        // the embedFonts prop should be controlled on a field by field basic and depend on the style name. 
+        // a multi style text field must use all system fonts or all embedded or it will not work.
+//      override public function set styleSheet(ss:StyleSheet):void
+//      {
+//          var f:Array = new Array();
+//          ss.styleNames.forEach(function(s:*,i:uint,a:Array):void
+//          {
+//              var ff:String = ss.getStyle(s).fontFamily;
+//              if (ff!=null && f.indexOf(ff)==-1)
+//                  f.push(ff);
+//          });
+//          var b:Boolean = false;
+//          f.forEach(function(s:*,i:uint,a:Array):void
+//          {
+//              trace(s+" "+isSystemFont(s));
+//              if (!isSystemFont(s))
+//                  b = true;
+//          });
+//          embedFonts = b;
+//          super.styleSheet = ss;
+//      }
+        
+    }
 }
 
 
